@@ -38,7 +38,7 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            'throttle:60,1',
+            //'throttle:60,1', -- Indica el máximo de request que puede recibir el API
             'bindings',
         ],
     ];

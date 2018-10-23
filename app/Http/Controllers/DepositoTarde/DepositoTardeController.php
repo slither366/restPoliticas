@@ -5,6 +5,7 @@ namespace App\Http\Controllers\DepositoTarde;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ApiController;
 use App\DepositoTarde;
+use DB;
 
 class DepositoTardeController extends ApiController
 {
@@ -29,7 +30,7 @@ class DepositoTardeController extends ApiController
     public function store(Request $request)
     {
         $rules = [
-            'cod_local' => 'required|digits:3',
+            'cod_local' => 'required|size:3',
             'mes_periodo' => 'required|digits:2',
             'ano_periodo' => 'required|digits:4',
             'dia_cierre' => 'required',
@@ -89,4 +90,18 @@ class DepositoTardeController extends ApiController
 
         $depositos->delete();
     }
+
+    public function getLlaveDif($llave)
+    {
+        //$depositos = DepositoTarde::findOrFail($id);
+        $depositos = DB::table('deposito_tardes')->where('llave_dif','=',$llave)->get();
+
+        if($depositos == '[]'){
+            return 'false';
+        }
+        else{
+            return 'true';
+        }
+
+    }    
 }

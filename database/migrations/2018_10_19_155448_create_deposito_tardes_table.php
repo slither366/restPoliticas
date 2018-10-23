@@ -20,6 +20,7 @@ class CreateDepositoTardesTable extends Migration
             $table->char('ano_periodo',4);
             $table->string('dia_cierre',9);
             $table->dateTime('fecha_cierre_dia');
+            $table->dateTime('fecha_cuadratura_cierre_dia');
             $table->string('dia_op_banc',9);
             $table->dateTime('fecha_op_bancaria');
             $table->decimal('dif_min',8,2);
@@ -30,6 +31,7 @@ class CreateDepositoTardesTable extends Migration
             $table->string('usuario',15);
             $table->decimal('mon_tot_perdido',9,3);
             $table->char('estado_cuadratura',1);
+            $table->string('llave_dif',100);
             $table->timestamps();
         });
     }

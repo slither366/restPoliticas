@@ -17,6 +17,7 @@ class DepositoTarde extends Model
         'ano_periodo',
         'dia_cierre',
         'fecha_cierre_dia',
+        'fecha_cuadratura_cierre_dia',
         'dia_op_banc',
         'fecha_op_bancaria',
         'dif_min',
@@ -27,5 +28,6 @@ class DepositoTarde extends Model
         'usuario',
         'mon_tot_perdido',
         'estado_cuadratura',
+        'llave_dif',
     ];
 }
